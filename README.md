@@ -1,83 +1,44 @@
 # User Story to Tests
 
-A full-stack application leveraging LLMs to convert user stories into structured test cases. This project uses a monorepo structure with a React frontend and a Node.js/Express backend.
+A full-stack app to convert user stories into structured test cases using LLMs, with React frontend and Node.js/Express backend.
 
 ## Features
-
-- **User Story Input**: Interface to input user stories and acceptance criteria.
-- **JIRA Integration**: Connect to JIRA to fetch assigned user stories and auto-populate details.
-- **LLM Integration**: Uses Groq API to generate comprehensive test cases from user stories.
-- **Test Case Management**: View and manage generated test cases.
+- Input user stories and acceptance criteria
+- JIRA integration: fetch and auto-populate stories
+- LLM-powered test case generation (Groq API)
+- View/manage generated test cases
 
 ## Tech Stack
+- Frontend: React, TypeScript, Vite
+- Backend: Node.js, Express, TypeScript, Zod
 
-- **Frontend**: React, TypeScript, Vite
-- **Backend**: Node.js, Express, TypeScript, Zod
-- **Monorepo**: npm workspaces
-
-## Prerequisites
-
-- Node.js (v18+ recommended)
-- npm
-- [Groq API Key](https://console.groq.com/)
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd user-story-to-tests
-   ```
-
-2. Install dependencies (from the root directory):
-   ```bash
+## Quick Start
+1. **Clone & Install**
+   ```sh
+   git clone <your-repo-url>
+   cd <project-folder>
    npm install
    ```
-
-## Configuration
-
-The backend requires environment variables to function correctly, specifically for the LLM integration.
-
-1. Create a `.env` file in the root directory:
-   ```bash
-   cp .env.example .env
+2. **Configure**
+   - Copy `.env.example` to `.env` and fill in required values (Groq API key, JIRA info, ports).
+3. **Run**
+   ```sh
+   npm run dev
    ```
-   *(Note: If `.env.example` does not exist, create `.env` manually)*
+   - Frontend: http://localhost:5174 (or your configured port)
+   - Backend: http://localhost:8090 (or your configured port)
 
-2. Add the following variables to `.env`:
+## Port & CORS
+- Change frontend port in `.env` (`FRONTEND_PORT`) and `frontend/vite.config.ts` uses it automatically.
+- Backend CORS allows the frontend port set in `.env` (`CORS_ORIGIN`).
+- If you see CORS errors, ensure both ports match and restart both servers.
 
-   ```env
-   # Required
-   groq_API_KEY=your_groq_api_key_here
+## JIRA Usage
+- Click "Connect JIRA" in the UI, enter your JIRA URL, email, and API token.
+- Select and link a story to auto-fill details.
 
-   # Optional (Defaults shown)
-   groq_API_BASE=https://api.groq.com/openai/v1
-   groq_MODEL=llama3-8b-8192
-   PORT=8080
-   CORS_ORIGIN=http://localhost:5173
-   ```
-
-## Running the Application
-
-To start both the frontend and backend servers concurrently:
-
-```bash
-npm run dev
-```
-
-- **Frontend**: [http://localhost:5173](http://localhost:5173)
-- **Backend**: [http://localhost:8080](http://localhost:8080)
-
-## JIRA Integration Usage
-
-1.  Click the **"Connect JIRA"** button in the UI.
-2.  Enter your JIRA credentials:
-    *   **JIRA URL**: Your instance URL (e.g., `https://your-domain.atlassian.net`).
-    *   **Email**: The email address you use to log in to JIRA.
-    *   **API Token**: An API token generated from [Atlassian Account Settings](https://id.atlassian.com/manage-profile/security/api-tokens).
-3.  Once connected, select a user story from the dropdown.
-4.  Click **"Link Story"** to fetch the Title, Description, and Acceptance Criteria.
-
+---
+For more, see the full `PORT-AND-CORS-RESTRICTIONS.md`.
 ## Project Structure
 
 - `backend/`: Express API server and LLM integration logic.
