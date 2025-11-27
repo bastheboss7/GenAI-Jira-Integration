@@ -43,3 +43,10 @@ For more, see the full `PORT-AND-CORS-RESTRICTIONS.md`.
 
 - `backend/`: Express API server and LLM integration logic.
 - `frontend/`: React application for the user interface.
+
+
+## 📺 Video Demo
+
+Watch a demo of the app in action:
+
+[▶️ Click here to view the video demo](https://1drv.ms/v/c/215bad6897ca366e/IQDmuJ2XfBc_Q6JcVIa52P96AfZEBcWrGmtxw-lQNQCtlGE?e=myN3iS)
