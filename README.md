@@ -49,4 +49,4 @@ For more, see the full `PORT-AND-CORS-RESTRICTIONS.md`.
 
 Watch a demo of the app in action:
 
-[▶️ Click here to view the video demo](https://drive.google.com/file/d/1px5QXzxPAFWrjgJwa-CZkus89Je48YuA/view?usp=sharing)
+[▶️ Click here to view the video demo](https://drive.google.com/file/d/1QKkJHwcKfqYSE9t3ndEKwghyfAPDPccf/view?usp=drive_link)
