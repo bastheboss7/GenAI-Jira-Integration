@@ -1,49 +1,38 @@
-# User Story to Tests
+# 🤖 GenAI User Story to Test Case Generator
+### Bridging the gap between Product Requirements and Quality Assurance with LLMs.
 
-A full-stack app to convert user stories into structured test cases using LLMs, with React frontend and Node.js/Express backend.
-
-## Features
-- Input user stories and acceptance criteria
-- JIRA integration: fetch and auto-populate stories
-- LLM-powered test case generation (Groq API)
-- View/manage generated test cases
-
-## Tech Stack
-- Frontend: React, TypeScript, Vite
-- Backend: Node.js, Express, TypeScript, Zod
-
-## Quick Start
-1. **Clone & Install**
-   ```sh
-   git clone <your-repo-url>
-   cd <project-folder>
-   npm install
-   ```
-2. **Configure**
-   - Copy `.env.example` to `.env` and fill in required values (Groq API key, JIRA info, ports).
-3. **Run**
-   ```sh
-   npm run dev
-   ```
-   - Frontend: http://localhost:5174 (or your configured port)
-   - Backend: http://localhost:8090 (or your configured port)
-
-## Port & CORS
-- Change frontend port in `.env` (`FRONTEND_PORT`) and `frontend/vite.config.ts` uses it automatically.
-- Backend CORS allows the frontend port set in `.env` (`CORS_ORIGIN`).
-- If you see CORS errors, ensure both ports match and restart both servers.
-
-## JIRA Usage
-- Click "Connect JIRA" in the UI, enter your JIRA URL, email, and API token.
-- Select and link a story to auto-fill details.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq_AI-F55036?style=for-the-badge&logo=openai&logoColor=white)
 
 ---
-For more, see the full `PORT-AND-CORS-RESTRICTIONS.md`.
-## Project Structure
 
-- `backend/`: Express API server and LLM integration logic.
-- `frontend/`: React application for the user interface.
+## 🌟 The Vision
+Manual test case creation from Jira tickets is time-consuming and prone to human error. This application automates the transition from **User Story** to **Structured Test Suite** by leveraging High-Performance LLMs (Groq API). It ensures 100% acceptance criteria coverage in seconds.
 
+
+
+## ✨ Key Features
+* **🔗 Seamless JIRA Integration:** Fetch user stories, descriptions, and acceptance criteria directly via Jira API.
+* **🧠 Intelligence Layer:** Powered by **Groq API** for ultra-fast, structured test case generation.
+* **📋 Modern UI:** Built with React & Vite for a snappy, responsive consultant-grade experience.
+* **🛡️ Type-Safe Backend:** Node.js/Express backend fortified with **Zod** for strict data validation.
+
+---
+
+```mermaid
+graph LR
+    A[Jira API] -->|Fetch Story| B[Express Backend]
+    B -->|Prompt Engineering| C[Groq LLM]
+    C -->|Structured JSON| B
+    B -->|API Response| D[React Frontend]
+    D -->|Edit/Export| E[QA Team]
+    
+    style C fill:#f96,stroke:#333,stroke-width:2px
+    style D fill:#61DAFB,stroke:#333
+```
 
 ## 📺 Video Demo
 
