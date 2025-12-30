@@ -38,4 +38,4 @@ graph LR
 
 Watch a demo of the app in action:
 
-[▶️ Click here to view the video demo](https://drive.google.com/file/d/1QKkJHwcKfqYSE9t3ndEKwghyfAPDPccf/view?usp=drive_link)
+[▶️ Click here to view the video demo](https://youtu.be/eV_g_kf53Ww)
